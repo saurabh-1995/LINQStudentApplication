@@ -1,0 +1,44 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model StudentJoinDetailsModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Student Record</h2>
+<div id="PartialView">
+    <partial name="_StudentPartialView" model="Model.studentJoinResultSet" />
+</div>
+<form method="post" class="form-group" id="StudentSearch">
+    <div>
+        <b> <span>Search By its: </span></b>
+        <select name="SearchByCategory">
+            <option value="">Choose</option>
+            <option value="Name">Name</option>
+            <option value="ID">ID</option>
+            <option value="Class">Class</option>
+        </select>
+        <input type="text" name="SearchByText" />
+        <b><span> Order By :</span></b>
+        <select name="OrderByCategory">
+            <option value="">Choose</option>
+            <option value="Name">Name</option>
+            <option value="ID">ID</option>
+            <option value="Class">Class</option>
+        </select>
+        <b><span> Range :</span></b>
+        <input type="number" name="MinRange" />
+        <b><span>  To :</span></b>
+        <input type="number" name="MaxRange" />
+        <button type="button" class="btn btn-primary" value="Search" data-attr="submit">Search</button>
+    </div>
+</form>
+
+<div id="PartialResultView">
+
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/searchStudent.js"></script>
+
+
+
+
+
